@@ -1,0 +1,23 @@
+# Personal architecture notes -- not for the shared lab repo.
+ARCHITECTURE.md
+
+# ROS 2 / colcon build artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Host-side Gazebo launcher cache (downloaded by scripts/start_gazebo.sh)
+.gazebo-sim/
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor / OS cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Claude
+.claude
