@@ -20,6 +20,9 @@ setup(
     entry_points={
         'console_scripts': [
             'offboard_control = px4_offboard_control.offboard_control:main',
+            'square_trajectory = px4_offboard_control.square_trajectory:main',
+            'survey_trajectory = px4_offboard_control.survey_trajectory:main',
+            'circle_trajectory = px4_offboard_control.circle_trajectory:main',
         ],
     },
 )
