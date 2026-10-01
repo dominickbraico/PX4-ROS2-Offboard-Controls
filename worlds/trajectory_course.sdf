@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- trajectory_grid plus markers for the default square / circle / survey paths (5 m poles = default flight altitude).
+     Axes: Gazebo +Y = PX4 North, Gazebo +X = PX4 East. The vehicle spawns at
+     the origin (the arming point the trajectory nodes measure from).
+     All markers are visual-only (no collision), so they never affect flight. -->
+<sdf version="1.9">
+  <world name="trajectory_course">
+    <physics type="ode">
+      <max_step_size>0.004</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+      <real_time_update_rate>250</real_time_update_rate>
+    </physics>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type="adiabatic"/>
+    <scene>
+      <grid>false</grid>
+      <ambient>0.5 0.5 0.5 1</ambient>
+      <background>0.53 0.75 0.93 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name="ground_plane">
+      <static>true</static>
+      <link name="link">
+        <collision name="collision">
+          <geometry><plane><normal>0 0 1</normal><size>1 1</size></plane></geometry>
+        </collision>
+        <visual name="visual">
+          <geometry><plane><normal>0 0 1</normal><size>500 500</size></plane></geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient><diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <light name="sunUTC" type="directional">
+      <pose>0 0 500 0 -0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>0.001 0.625 -0.78</direction>
+      <diffuse>0.904 0.904 0.904 1</diffuse>
+      <specular>0.271 0.271 0.271 1</specular>
+    </light>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <world_frame_orientation>ENU</world_frame_orientation>
+      <latitude_deg>47.397971057728974</latitude_deg>
+      <longitude_deg>8.546163739800146</longitude_deg>
+      <elevation>488</elevation>
+    </spherical_coordinates>
+    <model name="grid_e_1"><static>true</static><pose>-50.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_2"><static>true</static><pose>0.000 -50.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_3"><static>true</static><pose>-45.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_4"><static>true</static><pose>0.000 -45.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_5"><static>true</static><pose>-40.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_6"><static>true</static><pose>0.000 -40.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_7"><static>true</static><pose>-35.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_8"><static>true</static><pose>0.000 -35.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_9"><static>true</static><pose>-30.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_10"><static>true</static><pose>0.000 -30.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_11"><static>true</static><pose>-25.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_12"><static>true</static><pose>0.000 -25.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_13"><static>true</static><pose>-20.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_14"><static>true</static><pose>0.000 -20.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_15"><static>true</static><pose>-15.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_16"><static>true</static><pose>0.000 -15.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_17"><static>true</static><pose>-10.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_18"><static>true</static><pose>0.000 -10.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_19"><static>true</static><pose>-5.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_20"><static>true</static><pose>0.000 -5.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_21"><static>true</static><pose>5.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_22"><static>true</static><pose>0.000 5.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_23"><static>true</static><pose>10.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_24"><static>true</static><pose>0.000 10.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_25"><static>true</static><pose>15.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_26"><static>true</static><pose>0.000 15.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_27"><static>true</static><pose>20.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_28"><static>true</static><pose>0.000 20.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_29"><static>true</static><pose>25.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_30"><static>true</static><pose>0.000 25.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_31"><static>true</static><pose>30.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_32"><static>true</static><pose>0.000 30.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_33"><static>true</static><pose>35.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_34"><static>true</static><pose>0.000 35.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_35"><static>true</static><pose>40.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_36"><static>true</static><pose>0.000 40.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_37"><static>true</static><pose>45.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_38"><static>true</static><pose>0.000 45.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_e_39"><static>true</static><pose>50.000 0.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.06 100 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="grid_n_40"><static>true</static><pose>0.000 50.000 0.005 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>100 0.06 0.01</size></box></geometry>
+        <material><ambient>0.35 0.35 0.35 1</ambient><diffuse>0.35 0.35 0.35 1</diffuse><emissive>0.35 0.35 0.35 1</emissive></material>
+      </visual></link></model>
+    <model name="axis_north_41"><static>true</static><pose>0.000 25.000 0.010 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.2 50 0.01</size></box></geometry>
+        <material><ambient>0.9 0.1 0.1 1</ambient><diffuse>0.9 0.1 0.1 1</diffuse><emissive>0.9 0.1 0.1 1</emissive></material>
+      </visual></link></model>
+    <model name="axis_east_42"><static>true</static><pose>25.000 0.000 0.010 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>50 0.2 0.01</size></box></geometry>
+        <material><ambient>0.1 0.7 0.1 1</ambient><diffuse>0.1 0.7 0.1 1</diffuse><emissive>0.1 0.7 0.1 1</emissive></material>
+      </visual></link></model>
+    <model name="north_tip_43"><static>true</static><pose>0.000 50.000 0.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.5</radius></sphere></geometry>
+        <material><ambient>0.9 0.1 0.1 1</ambient><diffuse>0.9 0.1 0.1 1</diffuse><emissive>0.9 0.1 0.1 1</emissive></material>
+      </visual></link></model>
+    <model name="east_tip_44"><static>true</static><pose>50.000 0.000 0.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.5</radius></sphere></geometry>
+        <material><ambient>0.1 0.7 0.1 1</ambient><diffuse>0.1 0.7 0.1 1</diffuse><emissive>0.1 0.7 0.1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_45"><static>true</static><pose>0.000 5.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_46"><static>true</static><pose>5.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_47"><static>true</static><pose>0.000 10.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_48"><static>true</static><pose>10.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_49"><static>true</static><pose>0.000 15.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_50"><static>true</static><pose>15.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_51"><static>true</static><pose>0.000 20.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_52"><static>true</static><pose>20.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_53"><static>true</static><pose>0.000 25.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_54"><static>true</static><pose>25.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_55"><static>true</static><pose>0.000 30.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_56"><static>true</static><pose>30.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_57"><static>true</static><pose>0.000 35.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_58"><static>true</static><pose>35.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_59"><static>true</static><pose>0.000 40.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_60"><static>true</static><pose>40.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_61"><static>true</static><pose>0.000 45.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_62"><static>true</static><pose>45.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_n_63"><static>true</static><pose>0.000 50.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="tick_e_64"><static>true</static><pose>50.000 0.000 0.250 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.12</radius><length>0.5</length></cylinder></geometry>
+        <material><ambient>1 1 1 1</ambient><diffuse>1 1 1 1</diffuse><emissive>1 1 1 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_65"><static>true</static><pose>0.000 10.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_66"><static>true</static><pose>0.000 10.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_67"><static>true</static><pose>10.000 10.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_68"><static>true</static><pose>10.000 10.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_69"><static>true</static><pose>10.000 0.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_70"><static>true</static><pose>10.000 0.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>1 0.5 0 1</ambient><diffuse>1 0.5 0 1</diffuse><emissive>1 0.5 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_71"><static>true</static><pose>10.000 0.000 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_72"><static>true</static><pose>9.830 1.294 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_73"><static>true</static><pose>9.330 2.500 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_74"><static>true</static><pose>8.536 3.536 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_75"><static>true</static><pose>7.500 4.330 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_76"><static>true</static><pose>6.294 4.830 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_77"><static>true</static><pose>5.000 5.000 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_78"><static>true</static><pose>3.706 4.830 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_79"><static>true</static><pose>2.500 4.330 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_80"><static>true</static><pose>1.464 3.536 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_81"><static>true</static><pose>0.670 2.500 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_82"><static>true</static><pose>0.170 1.294 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_83"><static>true</static><pose>0.000 0.000 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_84"><static>true</static><pose>0.170 -1.294 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_85"><static>true</static><pose>0.670 -2.500 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_86"><static>true</static><pose>1.464 -3.536 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_87"><static>true</static><pose>2.500 -4.330 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_88"><static>true</static><pose>3.706 -4.830 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_89"><static>true</static><pose>5.000 -5.000 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_90"><static>true</static><pose>6.294 -4.830 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_91"><static>true</static><pose>7.500 -4.330 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_92"><static>true</static><pose>8.536 -3.536 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_93"><static>true</static><pose>9.330 -2.500 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="circle_94"><static>true</static><pose>9.830 -1.294 0.050 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.15</radius><length>0.1</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_95"><static>true</static><pose>5.000 0.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_96"><static>true</static><pose>5.000 0.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>1 0.9 0 1</ambient><diffuse>1 0.9 0 1</diffuse><emissive>1 0.9 0 1</emissive></material>
+      </visual></link></model>
+    <model name="lane_97"><static>true</static><pose>0.000 15.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.1 30 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="lane_98"><static>true</static><pose>5.000 15.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.1 30 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="lane_99"><static>true</static><pose>10.000 15.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.1 30 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="lane_100"><static>true</static><pose>15.000 15.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.1 30 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="lane_101"><static>true</static><pose>20.000 15.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>0.1 30 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="survey_edge_n_102"><static>true</static><pose>10.000 30.000 0.015 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><box><size>20 0.1 0.01</size></box></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_103"><static>true</static><pose>0.000 30.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_104"><static>true</static><pose>0.000 30.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_105"><static>true</static><pose>20.000 30.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_106"><static>true</static><pose>20.000 30.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_107"><static>true</static><pose>20.000 0.000 2.500 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><cylinder><radius>0.08</radius><length>5.0</length></cylinder></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+    <model name="pole_top_108"><static>true</static><pose>20.000 0.000 5.000 0 0 0</pose>
+      <link name="l"><visual name="v"><geometry><sphere><radius>0.3</radius></sphere></geometry>
+        <material><ambient>0.1 0.3 0.9 1</ambient><diffuse>0.1 0.3 0.9 1</diffuse><emissive>0.1 0.3 0.9 1</emissive></material>
+      </visual></link></model>
+  </world>
+</sdf>

@@ -23,7 +23,7 @@ Each step is its own terminal.
 docker build -f docker/Dockerfile -t px4-ros2-offboard-controls:latest .
 ```
 
-**2. Start Gazebo:**
+**2. Start Gazebo** (optionally pick a world, see [Choosing a Gazebo world](#choosing-a-gazebo-world)):
 ```bash
 ./scripts/start_gazebo.sh
 ```
@@ -54,6 +54,44 @@ and wait for the vehicle to disarm before starting the next.
 ```bash
 docker stop px4-ros2-offboard-controls   # then Ctrl+C in the Gazebo terminal
 ```
+
+## Choosing a Gazebo world
+
+Worlds make the trajectory easier to see. Set `PX4_GZ_WORLD` to the world
+name in **both** step 2 and step 3 (they must match; default is `default`):
+```bash
+PX4_GZ_WORLD=trajectory_course ./scripts/start_gazebo.sh      # terminal 1
+PX4_GZ_WORLD=trajectory_course ./scripts/run_container.sh     # terminal 2
+```
+The vehicle spawns at the origin, which is where the nodes' North/East paths
+are measured from. In the custom worlds Gazebo +Y is North and +X is East.
+
+Custom worlds (in `worlds/`, copied into Gazebo's world store on launch):
+
+| World | What you get |
+|---|---|
+| `trajectory_grid` | Flat ground, grid line every 5 m, red North axis, green East axis, white tick posts every 5 m along each axis |
+| `trajectory_course` | `trajectory_grid` plus markers for the **default** paths: orange 5 m poles at the square's corners, a yellow ring and centre pole for the circle, blue lane lines and corner poles for the survey. Poles are 5 m tall = default `altitude` |
+
+If you change `side`, `radius`, `length`, etc., the markers won't move, but
+the grid still gives you a scale. Markers are visual-only, so they never
+collide with the vehicle.
+
+PX4's stock worlds also work (`~/.simulation-gazebo/worlds/`, downloaded on
+first launch):
+
+| World | Notes |
+|---|---|
+| `default` | Empty flat ground |
+| `lawn` | Grass field |
+| `walls` | Flat ground with boxes to fly around |
+| `windy` | Constant wind, to see tracking error |
+| `forest`, `baylands`, `aruco` | Larger scenes; download models from Gazebo Fuel on first launch (needs internet, slow first load) |
+
+The set of stock worlds may change as PX4's model repo updates; list what's
+installed with `ls ~/.simulation-gazebo/worlds`. To add your own, drop a
+`<name>.sdf` in `worlds/` (the `<world name="...">` must equal the filename)
+and use `PX4_GZ_WORLD=<name>`.
 
 ## Control node parameters
 

@@ -36,6 +36,22 @@ if [ ! -f "${CACHE_DIR}/simulation-gazebo" ]; then
         https://raw.githubusercontent.com/PX4/PX4-gazebo-models/main/simulation-gazebo
 fi
 
+# simulation-gazebo downloads PX4's models/worlds into ~/.simulation-gazebo on
+# first run (and skips the download once that directory is non-empty). Make
+# sure that has happened, then drop this repo's worlds/ next to PX4's so
+# PX4_GZ_WORLD can name either kind.
 cd "${CACHE_DIR}"
+if [ ! -d "${HOME}/.simulation-gazebo/models" ]; then
+    python3 simulation-gazebo --dryrun
+fi
+mkdir -p "${HOME}/.simulation-gazebo/worlds"
+cp "${SCRIPT_DIR}"/worlds/*.sdf "${HOME}/.simulation-gazebo/worlds/"
+
+if [ ! -f "${HOME}/.simulation-gazebo/worlds/${PX4_GZ_WORLD:-default}.sdf" ]; then
+    echo "World '${PX4_GZ_WORLD:-default}' not found. Available:" >&2
+    ls "${HOME}/.simulation-gazebo/worlds" | sed 's/\.sdf$//' | sed 's/^/  /' >&2
+    exit 1
+fi
+
 echo "Starting Gazebo (world: ${PX4_GZ_WORLD:-default}, partition: ${GZ_PARTITION})..."
 python3 simulation-gazebo --world "${PX4_GZ_WORLD:-default}" --gz_partition "${GZ_PARTITION}"

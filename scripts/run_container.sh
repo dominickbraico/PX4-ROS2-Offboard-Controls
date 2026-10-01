@@ -24,4 +24,5 @@ fi
 exec docker run -it --rm \
     --network host \
     --name px4-ros2-offboard-controls \
+    -e PX4_GZ_WORLD="${PX4_GZ_WORLD:-default}" \
     "${IMAGE}" "$@"
